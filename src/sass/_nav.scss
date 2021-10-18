@@ -1,0 +1,25 @@
+nav {
+  max-width: inherit;
+  padding-bottom: .75rem;
+  padding-top: .75rem;
+  border-top: 1px solid var(--color-nav-top-border, #0000); // dark mode has color override
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    width: max-content;
+  }
+
+  li {
+    margin-right: 1rem;
+  }
+
+  a {
+    &.btn {
+      display: block;
+      line-height: unset;
+      padding: .5rem 1.125rem;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@use 'sass:color';
+
+// BREAKPOINTS
+$min-width: 260px;
+$break-point-xxs: 420px;
+$break-point-xs: 576px;
+$break-point-sm: 768px;
+$break-point-md: 992px;
+$break-point-lg: 1024px;
+$break-point-xl: 1400px;
+$break-point-xxl: 1600px;
+
+// Animation
+$duration: .3s;
+$easing: ease-out;
+
+// Color palette
+$color-1: hsla(220deg 30% 24% / 100%);
+$color-2: hsla(210deg 30% 58% / 100%);
+$color-3: hsla(203deg 70% 88% / 100%);
+$color-4: hsla(57deg 100% 50% / 100%);
+$color-5: hsla(220deg 30% 14% / 100%);
+$color-transparent: hsla(0deg 0% 0% / 0%);
+
+// using 98% white to prevent glowing and bleeding against
+// any surrounding dark content.
+// REF: https://web.dev/prefers-color-scheme/#avoid-pure-white
+$color-white: hsla(0deg 0% 98% / 100%);
+$color-black: hsla(0deg 0% 0% / 100%);
+$color-transparent: hsla(0deg 0% 0% / 0%);
+
+// Toggle vars
+$wrapper-padding: .25rem !default;
+$icon-width: 32px !default;
+$icon-gap: $wrapper-padding !default;

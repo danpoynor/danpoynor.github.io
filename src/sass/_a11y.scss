@@ -1,0 +1,23 @@
+@use 'abstracts' as *;
+
+a,
+button,
+input,
+select,
+textarea {
+  &:focus-visible {
+    outline: var(--focus-ring);
+    outline-offset: var(--focus-ring-offset);
+  }
+}
+
+.sr-only {
+  border: 0;
+  clip-path: inset(50%);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+}

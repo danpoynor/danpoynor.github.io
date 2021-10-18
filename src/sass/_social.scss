@@ -1,0 +1,49 @@
+.social {
+  display: inline;
+  line-height: 1;
+
+  ul {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: var(--gap, 0);
+    margin: 0 auto 2rem;
+    width: max-content;
+
+    @media screen and (min-width: 420px) {
+      flex-flow: row nowrap;
+    }
+  }
+
+  a {
+    border-radius: 50%;
+    color: var(--color-btn-text, #0000);
+    grid-template-columns: 24px;
+    height: 42px;
+    place-content: center;
+    width: 42px;
+
+    span {
+      display: none;
+    }
+
+    :root.light & {
+      &:hover {
+        color: var(--color-btn-text-hover, #0000);
+      }
+    }
+
+    @media screen and (min-width: 420px) { // Not a standard breakpoint
+      border-radius: var(--border-radius-sm, 0);
+      grid-template-columns: 24px 1fr;
+      height: auto;
+      padding: .5rem 1rem;
+      text-align: left;
+      width: auto;
+
+      span {
+        display: inline;
+      }
+    }
+  }
+}

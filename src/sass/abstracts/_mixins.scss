@@ -1,0 +1,30 @@
+@use 'variables' as *;
+
+@mixin body-transitions {
+  transition-duration: $duration;
+  transition-property: background-color, color;
+  transition-timing-function: $easing;
+}
+
+// Default padding is for icon buttons
+@mixin btn-style($padding-top-bottom: .25rem, $padding-left-right: .25rem) {
+  @include body-transitions;
+
+  align-items: center;
+  background-color: var(--color-btn-bg, #0000);
+  border-radius: var(--border-radius-sm, 0);
+  border: 0;
+  color: var(--color-btn-text, #0000);
+  cursor: pointer;
+  font-size: 1rem;
+  gap: .5rem;
+  line-height: 1;
+  padding: $padding-top-bottom $padding-left-right;
+  text-align: center;
+  width: max-content;
+
+  &:hover {
+    background-color: var(--color-btn-bg-hover, #0000);
+    color: var(--color-btn-text-hover, #0000);
+  }
+}

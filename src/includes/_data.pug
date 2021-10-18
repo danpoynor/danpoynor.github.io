@@ -1,0 +1,220 @@
+-
+  const projects = [
+    {
+      uuid: '54be25f6-8342-457d-8783-00518e6112c4',
+      type: 'fewd-project',
+      name: 'Personal Profile Page',
+      description: 'The goal for this project was to create a customized online personal profile page. This was a great way to practice HTML, CSS and GitHub skills.',
+      image: 'personal-profile-page',
+      technologies: {
+        html: ['Semantic HTML5'],
+        css: ['Latest best practices', 'Mobile-First Responsive Layout', 'Google Fonts'],
+        graphics: ['SVG graphics', 'PNG images']
+      },
+      links: [
+        {icon: 'www', name:'Live Preview', url:'https://danpoynor.github.io/techdegree-project-01/'},
+        {icon: 'repo', name:'Repo', url:'https://github.com/danpoynor/techdegree-project-01'}
+      ]
+    },
+    {
+      uuid: '4d5af217-f512-4ead-91f7-81a7d3b5283c',
+      type: 'fewd-project',
+      name: 'Mobile-first Responsive Layout',
+      description: 'Designing web pages that look and function well on multiple screen sizes is an essential skill for a web developer. Using HTML, CSS, and responsive design, I created this mobile-first web page with a layout that adjusts to fit mobile phones, tablets, and desktop displays. The project demonstrates an understanding of responsive design by adjusting to accommodate small, medium, and large screen sizes.',
+      image: 'responsive-layout',
+      technologies: {
+        html: ['Semantic HTML5'],
+        css: ['Latest best practices', 'Mobile-First Responsive Layout', 'Transition animations', 'box-shadow', 'linear gradient', 'Google Fonts'],
+        graphics: ['SVG graphics', 'PNG images']
+      },
+      links: [
+        {icon: 'www', name:'Live Preview', url:'https://danpoynor.github.io/techdegree-project-02/'},
+        {icon: 'repo', name:'Repo', url:'https://github.com/danpoynor/techdegree-project-02'}
+      ]
+    },
+    {
+      uuid: 'dc9bd2bd-9da3-47df-b561-d11fc8c1abd4',
+      type: 'fewd-project',
+      name: 'Online Registration Form',
+      description: 'This goal for this project was to build a responsive, mobile-first registration form using a variety of HTML form elements.',
+      image: 'responsive-registration-form',
+      technologies: {
+        html: ['Semantic HTML5'],
+        css: ['Latest best practices', 'Mobile-First Responsive Layout', 'Form styling', 'Google Fonts', 'linear-gradient', 'radial-gradient'],
+      },
+      links: [
+        {icon: 'www', name:'Live Preview', url:'https://danpoynor.github.io/techdegree-project-03/'},
+        {icon: 'repo', name:'Repo', url:'https://github.com/danpoynor/techdegree-project-03'}
+      ]
+    },
+    {
+      uuid: '82222d99-0b15-471e-9060-3fd58dea6986',
+      type: 'fewd-project',
+      name: 'Web Style Guide',
+      description: 'A Sass micro-framework that can be used to quickly prototype websites. This project focuses on using Sass to development with CSS easier and faster by organizing partials and variables in a reusable way.',
+      image: 'web-style-guide',
+      technologies: {
+        html: ['Semantic HTML5'],
+        css: ['Latest best practices', 'Sass', 'Sass @Mixins to generate colors and grid system'],
+        graphics: ['PNG images'],
+      },
+      links: [
+        {icon: 'www', name:'Live Preview', url:'https://danpoynor.github.io/techdegree-project-04/'},
+        {icon: 'repo', name:'Repo', url:'https://github.com/danpoynor/techdegree-project-04'}
+      ]
+    },
+    {
+      uuid: 'cef5461c-8fdc-4911-818b-750b14946d70',
+      type: 'fewd-project',
+      name: 'Interactive Photo Gallery',
+      description: 'An interactive, searchable gallery of photos. Photos are hidden or shown based on user search field input. When a user clicks on a thumbnail, the photo displays in a lightbox overlay based on <a href="https://github.com/fancyapps/ui" rel="noopener">Fancyapps Fancybox UI<svg class="icon-new-tab"><use href="#icon-new-tab"/></svg></a> along with "Next" and "Previous" arrows to cycle through photos.',
+      image: 'photo-gallery',
+      technologies: {
+        html: ['Semantic HTML5', 'No <code class="inline">&lt;div&gt;</code> tags'],
+        css: ['Latest best practices', 'Mobile-First Responsive Layout',],
+        js: ['JavaScript', 'jQuery', 'Fancybox Lightbox carousel'],
+        graphics: ['PNG graphics'],
+      },
+      links: [
+        {icon: 'www', name:'Live Preview', url:'https://danpoynor.github.io/techdegree-project-05/'},
+        {icon: 'repo', name:'Repo', url:'https://github.com/danpoynor/techdegree-project-05'}
+      ]
+    },
+    {
+      uuid: '4194174b-843f-43bd-9067-dcc36529f4fd',
+      type: 'fsjs-project',
+      name: 'Interactive Conference Registration Form Prototype',
+      description: 'Prototype for a fictional conference demonstrating form validation and error handling using vanilla JavaScript. This demo centers around a JavaScript class created to validate user entered data and present validation error messages (hints) to the user. The class has been developed to receive a set of validation rules to use for validating each field either in real-time as a user interacts with the form, or after the form has been submitted.',
+      image: 'conference-registration-form',
+      technologies: {
+        html: ['Semantic HTML5', '<code>role="status"</code> attribute', '<code>aria-live="polite"</code> attribute', 'form <code class="inline">novalidate</code> attribute'],
+        css: ['Latest best practices', 'Mobile-First Responsive Layout', '<code>scroll-behavior: smooth</code> property'],
+        js: ['JavaScript', 'OOP JavaScript', 'JavaScript Class <code class="inline">constructor</code> method', 'Event delegation', 'Validation'],
+        graphics: ['SVG icons', 'PNG graphics'],
+      },
+      links: [
+        {icon: 'www', name:'Live Preview', url:'https://danpoynor.github.io/conference-registration-form-page/'},
+        {icon: 'repo', name:'Repo', url:'https://github.com/danpoynor/conference-registration-form-page'}
+      ]
+    },
+    {
+      uuid: '0132e7ba-4df3-4601-b2b7-1ac1620233b6',
+      type: 'fsjs-project',
+      name: 'Phrase Hunter Game App',
+      description: 'A browser version of the &ldquo;Wheel of Success&ldquo; word guessing game. Uses JavaScript and OOP (Object-Oriented Programming) to come up with a random phrase that players try to guess by typing or selecting different letters. Goal is to guess all the letters in the phrase before making five incorrect guesses. This project utilizes <a href="https://animate.style/" target="_blank" title="View link in new tab" rel="noopener">Animate.css<svg class="icon-new-tab"><use href="#icon-new-tab"/></svg></a> to rapidly integrate cross-browser CSS animations into the demo.',
+      image: 'phrase-hunter-game-app',
+      technologies: {
+        html: ['Semantic HTML5', '<code>translate=no</code> HTML attribute'],
+        css: ['Latest best practices', 'Transform animations', 'Custom Properties', '<code>display: flex</code> layout', '<code>inset</code> property', 'variable <code class="inline">font-weight</code> keyframe animation'],
+        js: ['Vanilla JavaScript', 'OOP JavaScript', 'JSDoc comments', 'JavaScript Class <code class="inline">constructor</code> method', '<code>Math.random()</code> function', '<code>insertAdjacentElement()</code> method', '<code>match()</code> method', 'Event delegation', 'Animate.css', 'Various array methods', 'State management using objects'],
+      },
+      links: [
+        {icon: 'www', name:'Live Preview', url:'https://danpoynor.github.io/oop-game-show-app-project/'},
+        {icon: 'repo', name:'Repo', url:'https://github.com/danpoynor/oop-game-show-app-project'}
+      ]
+    },
+    {
+      uuid: '609612dc-6e15-488d-90a6-f194838876f2',
+      type: 'fewd-project',
+      name: 'Employee Directory',
+      description: 'This project loads mock employee data from <a href="https://randomuser.me" target="_blank" title="View link in new tab" rel="noopener">randomuser.me API<svg class="icon-new-tab"><use href="#icon-new-tab"/></svg></a> and display it on a web page. Results can be filtered to show employees by country or gender, then they can be searched for by name. Clicking an employees card presents a modal dialog that includes a carousel navigation to view other employees details.',
+      image: 'employee-directory',
+      technologies: {
+        html: ['Semantic HTML5', '<code>&lt;dialog&gt;</code> element', '<code>::backdrop</code> pseudo-element', 'No <code class="inline">&lt;div&gt;</code> tags'],
+        css: ['Dart Sass / CSS', 'Mobile-First Responsive Layout', '<code>display: grid</code> layout', '<code>:invalid</code> pseudo-selector', 'Google Fonts'],
+        js: ['Vanilla JavaScript', 'JSON', 'API Data Filtering', 'Search input pattern checking', 'Template Literals', 'Object Destructuring', 'Fetch API', 'Dynamically Loaded ES6 Modules', 'Namespaced Global Variables', 'Carousel Keyboard Navigation', 'Architected for automated tree-shaking'],
+        graphics: ['SVG icons'],
+        a11y: ['<code>:focus-visible</code> pseudo-selector styling for keyboard&nbsp;focus']
+      },
+      links: [
+        {icon: 'www', name:'Live Preview', url:'https://danpoynor.github.io/randomuser-api-example-with-query-filters-and-response-search/'},
+        {icon: 'repo', name:'Repo', url:'https://github.com/danpoynor/randomuser-api-example-with-query-filters-and-response-search'}
+      ]
+    },
+    {
+      uuid: 'd4e91384-0472-4a2a-bdee-e33cd568d433',
+      type: 'fewd-project',
+      name: 'Yahoo! Animated Flash Banner Examples 2',
+      description: 'While working in-house at Yahoo! I created a lot of Flash banners. Since Flash is no longer supported here is an animated GIF that shows a few examples. Note the colors and timing in the animated GIF are not accurate to the original banners.',
+      image: 'yahoo-banners-2-1024x819.gif',
+      technologies: {
+        graphics: ['Vector graphics', 'Bitmap Graphics']
+      },
+      links: [
+      ]
+    },
+        {
+      uuid: '2f9189a2-ae44-4cde-99d6-ff4efdb03d3d',
+      type: 'fewd-project',
+      name: 'Yahoo! Animated Flash Banner Examples 1',
+      description: 'Once upon a time I use to design and develop a lot of Flash banners. This animated GIF shows a few examples of the banners I created for Yahoo! Note the colors and timing in the animated GIF are not accurate to the original banners.',
+      image: 'yahoo-banners-1-1024x819.gif',
+      technologies: {
+        graphics: ['Vector graphics', 'Bitmap Graphics']
+      },
+      links: [
+      ]
+    },
+    {
+      uuid: '17ab1bb8-6e27-46c3-b85d-01745010af93',
+      type: 'fewd-project',
+      name: 'Social WebApp Dashboard',
+      description: 'Responsive interactive dashboard for a web application featuring JavaScript-driven charts and graphs based on the <a href="https://www.chartjs.org/" target="_blank" title="View link in new tab" rel="noopener">Chart.js<svg class="icon-new-tab"><use href="#icon-new-tab"/></svg></a> customizable charting library. Users can view segmented data, messages other users, receive notifications, and save their personal preferences.',
+      image: 'social-dashboard2-1024x819.gif',
+      technologies: {
+        html: ['Semantic HTML5', '<code>&lt;picture&gt;</code> element', 'Minimal use of <code class="inline">&lt;div&gt;</code> tags', 'Search input field with autocomplete'],
+        css: ['Latest best practices', 'Mobile-First Responsive Layout', 'Transform animations', '<code>display: grid</code> layout', 'No use of <code class="inline">display: flex</code> for layout', '<code>scroll-behavior: smooth</code> property', '<code>inset</code> property', 'Google Fonts'],
+        js: ['Vanilla JavaScript', 'JSON', 'LocalStorage', 'ChartJS', 'Namespaced Global Variables'],
+        graphics: ['SVG icons', 'Webp images', 'AVIF images', 'JPEG images'],
+        a11y: ['<code>:focus-visible</code> pseudo-selector styling for keyboard&nbsp;focus']
+      },
+      links: [
+        {icon: 'www', name:'Live Preview', url:'https://danpoynor.github.io/techdegree-project-07/'},
+        {icon: 'repo', name:'Repo', url:'https://github.com/danpoynor/techdegree-project-07'}
+      ]
+    },
+    {
+      uuid: '8ccf53bc-8aa3-4d0d-98d3-990d811e541c',
+      type: 'fewd-project',
+      name: 'VISA Card CSS Animation Component',
+      description: 'As part of the Visa Design System, I created the initial web based VISA card animations. These were then updated based on After Effects and Lottie motion designs to meet brand standards before finalizing and used as a basis for the development of React and Angular components.',
+      image: 'visa-card-animation-poc-1024x819.gif',
+      technologies: {
+        html: ['Semantic HTML5', ],
+        css: ['Dart Sass / CSS', 'Transitions', 'Transforms', 'Animations', 'Keyframes'],
+        js: ['Vanilla JavaScript'],
+        graphics: ['Vector graphics', 'Bitmap Graphics']
+      },
+      links: [
+      ]
+    },
+    {
+      uuid: '4de6d942-1357-45ae-a327-482daa30a1fb',
+      type: 'fewd-project',
+      name: 'Dell Cloud Services SVG Animation',
+      description: 'As part of a team of 5, I was responsible for the development of Dell Cloud Services landing page explorations. Based on one of the Figma files received from the UX designer, I created this SVG animation along with other custom SVG icons and the overall page layout.',
+      image: 'dell-cloud-service-animation2-1024x819.gif',
+      technologies: {
+        html: ['No <code class="inline">&lt;div&gt;</code> tags'],
+        css: ['Vanilla CSS', 'Mobile-First Responsive Layout', 'SVG animations'],
+        js: ['Vanilla JavaScript'],
+        graphics: ['SVG graphics', 'SVG animation'],
+        a11y: ['none']
+      },
+      links: [
+        {icon: 'www', name:'Live Preview', url:'dell-cloud-service-animation.html'},
+      ]
+    },
+    // TODO: Add a few more projects here
+    //- full-stack-app-with-react-front-end-and-a-express-rest-api
+    //- https://github.com/danpoynor/full-stack-app-with-react-front-end-and-a-express-rest-api
+    //-
+    //- School Admin SQL REST API
+    //- https://github.com/danpoynor/school-admin-sql-rest-api
+    //-
+    //- SQL Library Book Manager
+    //- https://github.com/danpoynor/sql-library-book-manager
+    //-
+    //- Static Node.js and Express Site
+    //- https://github.com/danpoynor/static-nodejs-and-express-site
+  ]

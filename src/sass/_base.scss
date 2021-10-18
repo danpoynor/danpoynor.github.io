@@ -1,0 +1,121 @@
+@use 'abstracts' as *;
+
+:root {
+  --border-radius-lg: 0;
+  --border-radius-sm: .25rem;
+  --color-accent: #{$color-4};
+  --color-btn-bg: var(--color-accent, #0000);
+  --color-btn-text: #{$color-1};
+  --color-transparent: #{$color-transparent};
+  --focus-ring-offset: 1px;
+  --focus-ring: 2px dashed var(--color-body-text, #0000);
+  --font-family: 'Source Sans Pro', helvetica, sans-serif;
+  --gap: .5rem;
+  --horz-spacing-lg: 2rem;
+  --horz-spacing: 1rem;
+  --vert-spacing: 3rem;
+
+  color-scheme: dark light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--color-body-bg, #0000);
+  color: var(--color-body-text, #0000);
+  font-family: var(--font-family, cursive);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.618;
+  scroll-behavior: smooth;
+}
+
+body,
+header,
+article,
+button,
+.chips li,
+::marker {
+  @include body-transitions;
+}
+
+ul {
+  list-style: none;
+}
+
+::marker {
+  color: var(--color-list-marker, #0000);
+}
+
+svg {
+  height: 24px;
+  pointer-events: none;
+  width: 24px;
+}
+
+.btn {
+  @include btn-style(.33rem, .75rem);
+
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  text-decoration: none;
+
+  &.new-window {
+    grid-template-columns: 30px 1fr 24px;
+  }
+
+  &:hover {
+    text-decoration: none;
+
+    /* stylelint-disable-next-line selector-max-specificity */
+    svg:not(.icon-new-tab) {
+      fill: currentColor;
+    }
+  }
+}
+
+button {
+  @include btn-style;
+}
+
+// SVG line widths
+[id='icon-heart'],
+[id='icon-up'],
+.lines {
+  stroke-width: 1.5;
+}
+
+.icon-new-tab {
+  fill: none;
+  height: 12px;
+  margin-top: -1px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2px;
+  stroke: currentColor;
+  width: 12px;
+
+  p & {
+    margin: 0 .1rem 1px .25rem;
+  }
+}
+
+.sr-only {
+  clip-path: inset(50%);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+}
+
+.nowrap {
+  white-space: nowrap;
+}

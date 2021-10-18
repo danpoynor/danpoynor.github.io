@@ -1,0 +1,38 @@
+section#contact
+  header
+    h2 Contact
+    p.subhead Feel free to reach out to me via the form below or email me directly at <a href='mailto:danpoynor@gmail.com' translate='no'>danpoynor@gmail.com</a>.
+
+  .wrapper
+    form(action='https://formsubmit.co/danpoynor@gmail.com' method="POST")
+
+      small All fields required.
+
+      fieldset
+        legend Contact Information
+
+        input(type='hidden' name='_subject' value='GitHub Portfolio Contact Form Submission')
+        input(type='hidden' name='_template' value='table')
+
+        .first-name
+          label(for='fname') First Name
+          input#fname(type='text' name='firstname' placeholder='Your name' required)
+
+        .last-name
+          label(for='lname') Last Name
+          input#lname(type='text' name='lastname' placeholder='Your last name' required)
+
+        .email
+          label(for='email') Email Address
+          input#email(type='email' name='email' placeholder='Your email address' required)
+
+        .message
+          label(for='message') Message
+          textarea#message(name='message' placeholder='Write something...' style='height:200px' required)
+
+        <input type='text' name='_honey' style='display:none'>
+
+        button(type='submit')
+          include icons/icon-email
+          include icons/icon-email-send
+          span Send

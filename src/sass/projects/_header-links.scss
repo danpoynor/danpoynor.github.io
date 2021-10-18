@@ -1,0 +1,30 @@
+@use '../abstracts' as *;
+
+article {
+  h3 {
+    display: inline-block;
+
+    a {
+      border-radius: 1rem;
+      display: inline-grid;
+      gap: 0;
+      grid-template-columns: 1fr;
+      opacity: 0;
+      place-items: center;
+      transition-duration: $duration;
+      transition-property: background-color, opacity;
+      transition-timing-function: $easing;
+
+      &:hover {
+        --color-btn-bg: var(--color-btn-bg-hover, #0000);
+        --color-btn-text: var(--color-btn-text-hover, #0000);
+      }
+    }
+
+    &:hover {
+      a {
+        opacity: 1;
+      }
+    }
+  }
+}

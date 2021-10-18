@@ -1,0 +1,100 @@
+@use 'variables' as *;
+
+@mixin dark {
+  --color-body-bg: #{$color-5};
+  --color-body-text: #{$color-3};
+  --color-fg-bg: #{$color-1};
+  --color-fg-hdln-text: var(--color-accent, #0000);
+  --color-fg-text: #{$color-3};
+  --color-list-marker: var(--color-accent, #0000);
+  --color-btn-bg-hover: #{$color-white};
+  --color-btn-text-hover: #{$color-1};
+  --color-nav-top-border: #{$color-transparent};
+
+  p {
+    a {
+      color: var(--color-btn-bg, #0000);
+    }
+  }
+
+  // Favorites, back-to-top btn
+  .toggle {
+    --color-heart-bg: var(--color-btn-text-hover, #0000);
+    --color-heart-shape-fill: var(--color-btn-text, #0000);
+    --color-heart-shape-stroke: var(--color-btn-bg, #0000);
+
+    &:hover {
+      --color-heart-shape-fill: var(--color-btn-bg, #0000);
+      --color-heart-shape-stroke: var(--color-btn-text-hover, #0000);
+    }
+  }
+
+  .btt {
+    &:hover {
+      --color-heart-shape-stroke: var(--color-btn-bg, #0000);
+    }
+  }
+
+  &.show-favorites .toggle-favorites,
+  .favorite .add-to-favorites {
+    --color-heart-shape-fill: var(--color-btn-bg, #0000);
+    --color-heart-shape-stroke: var(--color-btn-bg, #0000);
+
+    &:hover {
+      --color-heart-bg: var(--color-btn-text-hover, #0000);
+      --color-heart-shape-fill: var(--color-btn-text-hover, #0000);
+
+      background-color: var(--color-btn-bg-hover, #0000);
+    }
+  }
+
+  // Toggle dark mode
+  .toggle-dark-mode {
+    svg {
+      &:nth-of-type(1) {
+        .bg {
+          fill: var(--color-transparent, #0000);
+        }
+
+        .lines {
+          stroke: var(--color-fg-text, #0000);
+        }
+      }
+    }
+
+    &:hover {
+      svg {
+        .lines {
+          stroke: var(--color-fg-bg, #0000);
+        }
+
+        &:nth-of-type(2) {
+          .bg {
+            fill: var(--color-btn-text-hover, #0000);
+          }
+
+          .lines {
+            stroke: var(--color-btn-bg, #0000);
+          }
+        }
+      }
+    }
+  }
+
+  // Nav
+  nav {
+    background-color: var(--color-btn-bg, #0000);
+    border-top-color: var(--color-transparent, #0000);
+    color: var(--color-btn-text, #0000);
+
+    a {
+      background-color: var(--color-btn-text, #0000);
+      color: var(--color-btn-bg, #0000);
+
+      &:hover {
+        background-color: var(--color-btn-bg-hover, #0000);
+        color: var(--color-btn-text-hover, #0000);
+      }
+    }
+  }
+}

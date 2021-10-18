@@ -1,0 +1,116 @@
+include _mixins.pug
+
+section#projects
+  header
+    h2 Projects
+    p Thanks for viewing some of my projects. Below you can mark projects that you might want to investigate more later by clicking it&rsquo;s heart icon to make it a &ldquo;Favorite&rdquo;. Each project includes a &ldquo;Live Preview&rdquo; link and a link to the source code. If interested in seeing more of my work (such as lots of WordPress and marketing design/dev examples), please visit <a href='https://danpoynor.com' target='_blank' title='View link in new tab' rel="noopener">danpoynor.com</a> or <a href='#contact'>contact me</a>.
+
+  .wrapper
+    //- Since projects is a javascript array it can be reversed()
+    each project, index in projects.reverse()
+      - const counter = index + 1
+
+      //- Catch potential malformed data structure issues before rendering
+      if !project.name || !project.description || !project.image || !project.links
+        h3 #{counter}. Unexpected data format encountered.
+      else
+        //- Create an id so each an anchor tag can be targeted for each project
+        - const anchorId = project.name.replace(/\s+/g, '-').toLowerCase()
+        - const anchorLink = '#' + anchorId
+        //- Wrap last word in the project name in a <span> with anchor link so the
+        //- anchor link doesn't ever get orphaned on the next line by itself
+        - const words = project.name.split(' ')
+        - const lastWord = words[words.length - 1]
+        - const shortProjectName = project.name.replace(lastWord, '')
+        - const lastWordWithLink = `<span class='nowrap'>${lastWord}&nbsp;<a href=${anchorLink} class='favorite' title='Permalink to this project'><svg><use href="#icon-link"/></svg></a></span>`
+        - const projectNameWithLink = `${shortProjectName} ${lastWordWithLink}`
+
+        article(id=anchorId data-content={'uuid':project.uuid, 'type':project.type})
+
+          h3= counter
+            |&nbsp;:&nbsp;
+            !=projectNameWithLink
+
+          button(class='toggle add-to-favorites', type='button', role='switch', aria-checked='false', title='Add to Favorites')
+            <svg><use href="#icon-heart"/></svg>
+
+          figure(id='project-' + counter)
+
+            //- If project has links, use the first link as the live preview url
+            if project.links[0]
+              a(href=project.links[0].url target='_blank' title='Opens link in new tab' rel='noopener')
+                +picture(index, project.name, `images/${project.image}`)
+            else if project.image
+              +picture(index, project.name, `images/${project.image}`)
+
+            figcaption
+              = project.description
+
+          p!=project.description
+
+          if project.technologies.html || project.technologies.css || project.technologies.js || project.technologies.graphics || project.technologies.a11y
+
+            section.details
+
+              details
+
+                summary
+                  h4 View Technology Highlights
+
+                ul.tech-used
+                  if project.technologies.html
+                    li
+                      h5 HTML&nbsp;&nbsp;:&nbsp;&nbsp;
+                      ul
+                        each technology in project.technologies.html
+                          li!= technology
+
+                  if project.technologies.css
+                    li
+                      h5 CSS&nbsp;&nbsp;:&nbsp;&nbsp;
+                      ul
+                        each technology in project.technologies.css
+                          li!= technology
+
+                  if project.technologies.js
+                    li
+                      h5 JavaScript&nbsp;&nbsp;:&nbsp;&nbsp;
+                      ul
+                        each technology in project.technologies.js
+                          li!= technology
+
+                  if project.technologies.graphics
+                    li
+                      h5 Graphics&nbsp;&nbsp;:&nbsp;&nbsp;
+                      ul
+                        each technology in project.technologies.graphics
+                          li!= technology
+
+                  if project.technologies.a11y
+                    li
+                      h5 Accessibility&nbsp;&nbsp;:&nbsp;&nbsp;
+                      ul
+                        each technology in project.technologies.a11y
+                          li!= technology
+
+          if project.links
+
+            section.links
+
+              h5.sr-only View Links
+
+              for link in project.links
+                a(class='btn new-window' href=link.url target='_blank' title='Opens link in new tab' rel='noopener')
+                  case link.icon
+                    when 'repo'
+                      <svg><use href="#icon-code"/></svg>
+                    when 'www'
+                      <svg><use href="#icon-view"/></svg>
+                    default
+                      <svg><use href="#icon-code"/></svg>
+                  span= link.name
+                  <svg class="icon-new-tab"><use href="#icon-new-tab"/></svg>
+    else
+      //- If project.length = 0 show message
+      h2 No Projects Found
+      p.subhead Please add some portfolio projects to data.pug projects array.

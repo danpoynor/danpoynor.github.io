@@ -1,0 +1,18 @@
+@use 'abstracts' as *;
+
+body > footer {
+  border-top: 1px solid var(--color-fg-bg, #0000);
+  font-size: .75rem;
+  padding-bottom: 5rem;
+  padding-top: 5rem;
+  text-align: center;
+  width: auto;
+
+  p {
+    margin: 0;
+
+    &:last-of-type {
+      opacity: .6;
+    }
+  }
+}
