@@ -1,0 +1,90 @@
+@use 'variables' as *;
+
+@mixin light {
+  --color-body-bg: #{$color-3};
+  --color-body-text: #{$color-1};
+  --color-fg-bg: #{$color-white};
+  --color-fg-hdln-text: #{$color-5};
+  --color-fg-text: #{$color-2};
+  --color-list-marker: var(--color-btn-text, #0000);
+  --color-btn-bg-hover: #{$color-1};
+  --color-btn-text-hover: var(--color-accent, #0000);
+  --color-nav-top-border: #{$color-3};
+
+  p {
+    a {
+      color: var(--color-fg-text, #0000);
+      text-decoration: underline;
+    }
+  }
+
+  // Favorites, back-to-top btn
+  .toggle {
+    --color-heart-bg: var(--color-btn-text-hover, #0000);
+    --color-heart-shape-fill: var(--color-btn-bg, #0000);
+    --color-heart-shape-stroke: var(--color-btn-bg-hover, #0000);
+
+    &:hover {
+      --color-heart-shape-fill: var(--color-btn-bg-hover, #0000);
+      --color-heart-shape-stroke: var(--color-btn-bg, #0000);
+    }
+  }
+
+  .btt {
+    &:hover {
+      --color-heart-shape-stroke: var(--color-btn-text, #0000);
+    }
+  }
+
+  &.show-favorites .toggle-favorites,
+  .favorite .add-to-favorites {
+    --color-heart-shape-fill: var(--color-btn-text, #0000);
+    --color-heart-shape-stroke: var(--color-btn-bg, #0000);
+
+    &:hover {
+      --color-heart-shape-fill: var(--color-btn-text-hover, #0000);
+      --color-heart-shape-stroke: var(--color-btn-bg-hover, #0000);
+    }
+  }
+
+  .add-to-favorites {
+    &:hover {
+      background-color: var(--color-body-bg, #0000);
+    }
+  }
+
+  // Toggle dark mode
+  .toggle-dark-mode {
+    svg {
+      &:nth-of-type(2) {
+        .bg {
+          fill: var(--color-transparent, #0000);
+        }
+
+        .lines {
+          stroke: var(--color-fg-text, #0000);
+        }
+      }
+    }
+
+    &:hover {
+      svg {
+        &:nth-of-type(1) {
+          .bg {
+            fill: var(--color-btn-bg, #0000);
+          }
+
+          .lines {
+            stroke: var(--color-body-text, #0000);
+          }
+        }
+      }
+    }
+  }
+
+  // Nav
+  nav {
+    background-color: var(--color-fg-bg, #0000);
+    color: var(--color-btn-bg, #0000);
+  }
+}

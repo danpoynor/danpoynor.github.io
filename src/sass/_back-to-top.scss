@@ -1,0 +1,35 @@
+@use 'abstracts' as *;
+
+.btt {
+  bottom: .5rem;
+  box-shadow: 0 0 0 2px var(--color-body-bg, #0000);
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  right: .5rem;
+  z-index: 9999;
+  transition-duration: $duration;
+  transition-property: background-color, color, opacity;
+  transition-timing-function: $easing;
+
+  svg {
+    border-radius: 50%;
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  &:hover {
+    box-shadow: none
+  }
+
+  &.state-visible {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  @media screen and (min-width: $break-point-sm) {
+    bottom: 1rem;
+    right: 1rem;
+  }
+}

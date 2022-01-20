@@ -1,0 +1,162 @@
+@use 'abstracts' as *;
+
+// TODO: Consider if min(), max(), or clamp() with vw unit could be for widths
+
+.toolbar,
+body > header .wrapper,
+body > footer {
+  margin: 0 auto;
+  max-width: $break-point-xs;
+  min-width: $min-width; // 260px
+  padding: 0 var(--horz-spacing, 0);
+  width: 100%;
+
+  @media screen and (min-width: $break-point-xxs) { // 420px
+    max-width: $break-point-xs;
+    padding: 0 var(--horz-spacing-lg, 0);
+  }
+
+  @media screen and (min-width: $break-point-sm) { // 768px
+    max-width: $break-point-sm;
+  }
+
+  @media screen and (min-width: $break-point-lg) { // 1024px
+    max-width: $break-point-lg;
+  }
+}
+
+body > header {
+  .wrapper {
+    align-items: center;
+    display: grid;
+    gap: 0;
+    grid-template-areas:
+      'branding'
+      'intro';
+    grid-template-columns: 1fr;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+  }
+
+  .branding {
+    display: flex;
+    flex-flow: column;
+    grid-area: branding;
+    margin-bottom: 1.5rem;
+
+    h1 {
+      order: 2;
+    }
+  }
+
+  p {
+    font-size: 1.5rem;
+    grid-area: intro;
+    margin: 0;
+  }
+
+  @media screen and (min-width: $break-point-sm) { // 768px
+    .wrapper {
+      padding: var(--vert-spacing, 0) var(--horz-spacing-lg, 0);
+      grid-template-areas:
+        'branding intro'
+        'branding intro';
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .branding {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      padding-right: 2rem;
+    }
+
+    p {
+      border-left: 1px solid var(--color-body-bg, #0000);
+      padding-left: 2rem;
+    }
+  }
+
+  @media screen and (min-width: $break-point-lg) { // 1024px
+    .wrapper {
+      padding: 4rem var(--horz-spacing-lg, 0);
+    }
+  }
+
+  @media screen and (min-width: $break-point-xl) { // 1400px
+    .wrapper {
+      max-width: 1200px;
+    }
+  }
+
+  @media screen and (min-width: $break-point-xxl) { // 1600px
+    .wrapper {
+      padding: 6rem var(--horz-spacing-lg, 0);
+    }
+  }
+}
+
+body > section {
+  margin: 0 auto;
+  padding: 2rem var(--horz-spacing, 0);
+
+  > header {
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  @media screen and (min-width: $break-point-xxs) { // 420px
+    max-width: $break-point-xs;
+    padding-left: var(--horz-spacing-lg, 0);
+    padding-right: var(--horz-spacing-lg, 0);
+  }
+
+  @media screen and (min-width: $break-point-sm) { // 768px
+    max-width: $break-point-sm;
+  }
+
+  @media screen and (min-width: $break-point-lg) { // 1024px
+    max-width: $break-point-lg;
+  }
+
+  @media screen and (min-width: $break-point-xl) { // 1400px
+    max-width: none;
+
+    > header {
+      max-width: $break-point-lg;
+      padding-left: var(--horz-spacing-lg, 0);
+      padding-right: var(--horz-spacing-lg, 0);
+    }
+  }
+}
+
+// Avoid using #id as a selector, use a class or treat as an attribute instead
+// REF: https://developer.mozilla.org/en-US/docs/MDN/Guidelines/Code_guidelines/CSS#dont_use_id_selectors
+// REF: https://csswizardry.com/2011/09/when-using-ids-can-be-a-pain-in-the-class/
+// REF: https://cssguidelin.es/#ids-in-css
+[id='projects'] {
+  @media screen and (min-width: $break-point-lg) { // 1024px
+    .wrapper {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media screen and (min-width: $break-point-xl) { // 1400px
+    .wrapper {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}
+
+.toolbar {
+  padding: 0 .5rem;
+
+  @media screen and (min-width: $break-point-sm) {
+    padding: 0 1rem;
+  }
+
+  @media screen and (min-width: $break-point-md) {
+    padding: 0 var(--horz-spacing-lg, 0);
+  }
+}

@@ -1,0 +1,27 @@
+mixin image(name, source)
+  img(src=source alt=name)
+
+//- TODO: Load smaller images on smaller viewports
+mixin picture(index, name, source)
+  picture
+    //- Load webp images if supported
+    source(srcset=`${source}-1024x819.webp` type='image/webp')
+
+    //- Don't lazy load first or second image
+    if (index < 2)
+      img(
+        src=`${source}-1024x819.png`
+        alt=`Screenshot of ${name} project`
+        decoding='async'
+        onerror="this.style.display='none'"
+        width='512'
+        height='409')
+    else
+      img(
+        src=`${source}-1024x819.png`
+        alt=`Screenshot of ${name} project`
+        loading='lazy'
+        decoding='async'
+        onerror="this.style.display='none'"
+        width='512'
+        height='409')

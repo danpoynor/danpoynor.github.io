@@ -1,0 +1,12 @@
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: auto;
+  padding-top: 1rem;
+
+  .icon-new-tab {
+    fill: none;
+  }
+}

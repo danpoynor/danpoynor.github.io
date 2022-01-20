@@ -1,0 +1,17 @@
+@use 'abstracts' as *;
+
+body > header {
+  background-color: var(--color-fg-bg, #0000);
+
+  h2 {
+    margin-bottom: .5rem;
+
+    :root.dark & {
+      color: var(--color-btn-bg, #0000);
+    }
+
+    :root.light & {
+      color: var(--color-fg-text, #0000);
+    }
+  }
+}

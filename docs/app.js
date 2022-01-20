@@ -1,0 +1,1 @@
+import*as o from"./modules/toggle-dark-mode.js";import*as t from"./modules/favorites-add-remove.js";import*as e from"./modules/favorites-show-hide.js";import*as i from"./modules/back-to-top.js";document.addEventListener("DOMContentLoaded",(()=>{o.init(),t.init(),e.init(),i.init()}));

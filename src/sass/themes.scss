@@ -1,0 +1,16 @@
+@use 'abstracts/theme-dark' as *;
+@use 'abstracts/theme-light' as *;
+
+// TODO: Split themes into separate files to improve performance slightly.
+// TODO: Eventually use CSS.registerProperty() transition custom property colors.
+// REF: https://caniuse.com/?search=registerProperty
+
+:root {
+  &.dark {
+    @include dark;
+  }
+
+  &.light {
+    @include light;
+  }
+}
