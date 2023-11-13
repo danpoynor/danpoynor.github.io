@@ -48,7 +48,8 @@ section#projects
 
           p!=project.description
 
-          if project.technologies.html || project.technologies.css || project.technologies.js || project.technologies.graphics || project.technologies.a11y
+          if project.technologies && ((project.technologies.html && project.technologies.html.length > 0) || (project.technologies.css && project.technologies.css.length > 0) || (project.technologies.js && project.technologies.js.length > 0) || (project.technologies.graphics && project.technologies.graphics.length > 0) || (project.technologies.a11y && project.technologies.a11y.length > 0))
+
 
             section.details
 

@@ -10,6 +10,7 @@ figure {
     max-width: 512px;
     position: relative;
     transition: transform .3s ease;
+    overflow: hidden;
 
     &:hover {
       transform: scale(1.05);
